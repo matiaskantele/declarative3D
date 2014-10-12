@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Matias Kantele, declarative, 3D, graphics, xml3d" />
+    <meta name="description" content="Example implementation of xml3d." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>xml3d</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/xml3d.js"></script>
+    <script src="js/camera.js"></script>
+  </head>
+
+  <body onload="start()">
+    <h1>xml3d</h1>
+    <xml3d id="content" activeview="#defaultView">
+      <shader id="orangePhong" script="urn:xml3d:shader:phong">
+        <float3 name="diffuseColor" >1 0.5 0</float3>
+        <float name="ambientIntensity" >0.5</float>
+      </shader>
+
+      <view id="defaultView" position="7 -6.5 5" orientation="0.772239 0.341341 0.535848 1.347139"> </view>
+
+      <group shader="#orangePhong">
+        <mesh id="suzanne" type="triangles" src="suzanne.json" position="0 0 0"></mesh>
+      </group>
+    </xml3d>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

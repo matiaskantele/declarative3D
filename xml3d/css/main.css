@@ -1,0 +1,21 @@
+body {
+  background: url('img/noise.png') repeat scroll 0% 0% #202020;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+h1 {
+  color: white;
+  font-size: 60px;
+}
+
+#content {
+  height: 720px;
+  width: 1080px;
+  border: 2px dashed white;
+}
+
+#suzanne {
+  border: 1px solid white;
+}
