@@ -14,15 +14,31 @@
   <body onload="start()">
     <h1>xml3d</h1>
     <xml3d id="content" activeview="#defaultView">
-      <shader id="orangePhong" script="urn:xml3d:shader:phong">
-        <float3 name="diffuseColor" >1 0.5 0</float3>
-        <float name="ambientIntensity" >0.5</float>
-      </shader>
 
-      <view id="defaultView" position="7 -6.5 5" orientation="0.772239 0.341341 0.535848 1.347139"> </view>
+      <defs id="mainDef">
+        <lightshader id="ls_spot" script="urn:xml3d:lightshader:point">
+          <bool name="castShadow"></bool>
+        </lightshader>
 
-      <group shader="#orangePhong">
-        <mesh id="suzanne" type="triangles" src="suzanne.json" position="0 0 0"></mesh>
+        <shader id="material" script="urn:xml3d:shader:phong">
+          <float name="ambientIntensity">0.1</float>
+          <float3 name="diffuseColor">0.4 0.25 0.25</float3>
+          <float3 name="specularColor">0.5 0.5 0.5</float3>
+          <float name="shininess">0.2</float>
+          <bool name="useVertexColor">true</bool>
+        </shader>
+
+        <transform id="t_camera" rotation="0 0 1 0" translation="0 -200 -700"></transform>
+      </defs>
+
+      <group>
+        <light intensity="1.5" shader="#ls_spot"></light>
+      </group>
+
+      <view id="defaultView" transform="#t_camera"></view>
+
+      <group shader="#material">
+        <mesh type="triangles" src="suzanne.json"></mesh>
       </group>
     </xml3d>
 
