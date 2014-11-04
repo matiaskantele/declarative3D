@@ -1,0 +1,20 @@
+{
+  "name": "dec3D",
+  "version": "0.0.0",
+  "homepage": "https://github.com/matiisi/declarative3D",
+  "authors": [
+    "Matias Kantele <matias.kantele@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.4.2"
+  }
+}
